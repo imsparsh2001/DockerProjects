@@ -1,0 +1,20 @@
+services:
+  alpine:
+    image: alpine:latest
+    container_name: alpine_test
+    command: ["echo", "Hello from Alpine"]
+
+  busybox:
+    image: busybox:latest
+    container_name: busybox_test
+    command: ["echo", "Hello from Busybox"]
+
+  hello:
+    image: hello-world:latest
+    container_name: hello_test
+
+  nginx:
+    image: nginx:alpine
+    container_name: nginx_test
+    ports:
+      - "8080:80"
