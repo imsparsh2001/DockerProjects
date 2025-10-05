@@ -1,20 +1,16 @@
+version: "3.8"
+
 services:
-  alpine:
-    image: alpine:latest
-    container_name: alpine_test
-    command: ["echo", "Hello from Alpine"]
-
-  busybox:
-    image: busybox:latest
-    container_name: busybox_test
-    command: ["echo", "Hello from Busybox"]
-
-  hello:
-    image: hello-world:latest
-    container_name: hello_test
-
   nginx:
-    image: nginx:alpine
-    container_name: nginx_test
+    image: nginx:latest
+    container_name: nginx_server
     ports:
       - "8080:80"
+    restart: always
+
+  apache:
+    image: httpd:latest
+    container_name: apache_server
+    ports:
+      - "8081:80"
+    restart: always
